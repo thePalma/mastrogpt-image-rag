@@ -48,7 +48,7 @@ class VectorDB:
     res = req.post(self.url, json=msg).json()
     return res.get('embedding', [])
 
-  def insert(self, text, key):
+  def insert(self, key, text):
     vec = self.embed(text)
     data = {
         "key": key,

@@ -19,9 +19,10 @@ def load(args):
     else:
       res = db.vector_search(inp[1:])
       if len(res) > 0:
+        print (res)
         out = f"Found:\n"
         for i in res:
-          out += f"({i[0]:.2f}) {i[1]}\n"
+          out += f"({i[0]:.2f}) {i[1]} {i[2]}\n"
       else:
         out = "Not found"
   elif inp.startswith("!"):
