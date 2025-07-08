@@ -5,7 +5,10 @@ import base64
 
 def test_store():
     buc = bucket.Bucket({})
-    assert len(buc.find("cat")) == 0
+    if len(buc.find("cat")) != 0:
+        n = buc.remove("cat")
+        assert n > 0
+        assert len(buc.find("cat")) == 0
     body = pathlib.Path("tests/vision/cat.jpg").read_bytes()
     buc.write("cat.jpg", body)
     ls = buc.find("cat")

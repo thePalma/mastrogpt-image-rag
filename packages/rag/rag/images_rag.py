@@ -11,7 +11,7 @@ You can use it to search for images based on text queries.
 Start with `@[LPM][<size>]` to select the model then add `<size>` sentences from the context.
 Models: L=llama P=phi4 M=mistral.
 Your query is then passed to the LLM with the sentences to generate a better description.
-Example: `@L30img What is the image of a cat?`
+Example: `@L30 What is the image of a cat?`
 The RAG than searches for images in the `img` collection and returns the first image that matches the description provided by the LLM.
 """
 
@@ -136,6 +136,6 @@ def images_rag(args):
                 img = bkt.exturl(img_key, 3600)
                 if img:
                     res["html"] = f"<img src='{img}'>"
-                    out += "\nHere is an image that matches the description."
+                    out += "\n\nHere is an image that matches the description."
     res["output"] = out
     return res
