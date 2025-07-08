@@ -1,0 +1,10 @@
+[
+   {
+    "name": "Images Loader",
+    "url": "rag/loader"
+   },
+   {
+    "name": "Images RAG",
+    "url": "rag/rag"
+   }
+]
